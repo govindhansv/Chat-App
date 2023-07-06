@@ -10,7 +10,7 @@ const AuthPage = (props) => {
         e.preventDefault();
         const { value } = e.target[0];
         axios
-          .post(process.env.api + 'authenticate', { username: value })
+          .post("https://chat-app-4r9jy.ondigitalocean.app/authenticate", { username: value })
           .then((r) => props.onAuth({ ...r.data, secret: value }))
           .catch((e) => console.log("Auth Error", e));
       };
